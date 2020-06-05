@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
+#import django_heroku
 #from whitenoise.django import DjangoWhiteNoise
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%ia8f@)n1r_bviq)g9wmhel#b^$573@8*m3m$8&sb&cca)ujyo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -122,17 +122,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
 STATIC_URL = '/static/'
 
 #managing media
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"),]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 
 MEDIA_ROOT =os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
 
-django_heroku.settings(locals())
+
